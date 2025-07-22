@@ -11,7 +11,7 @@ The process uses `bwa-mem` for alignment and `samtools` for output processing.
     - Cleaned, paired-end FASTQ files (e.g., `sample_R1.fastq.gz` and `sample_R2.fastq.gz`).
 ## Step 1: Reference Genome Preparation
 
-For sugarcane genomic studies, i recommend using the reference genome of  [Saccharum officinarum x spontaneum](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_038087645.1/](https://phytozome-next.jgi.doe.gov/info/SofficinarumxspontaneumR570_v2_1) published by [Zhang et al., 2018 in Nature Genetics.](https://pmc.ncbi.nlm.nih.gov/articles/PMC11041754/)
+For sugarcane genomic studies, i recommend using the reference genome of  [Saccharum officinarum x spontaneum](https://phytozome-next.jgi.doe.gov/info/SofficinarumxspontaneumR570_v2_1) published by [Zhang et al., 2018 in Nature Genetics.](https://pmc.ncbi.nlm.nih.gov/articles/PMC11041754/)
 
 First, download the genome from NCBI and unzip it.
 
