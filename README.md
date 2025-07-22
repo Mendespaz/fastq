@@ -5,7 +5,7 @@ The process uses `bwa-mem` for alignment and `samtools` for output processing.
 
 ## Prerequisites
 
-- **Software:** `BWA` and `Samtools` must be installed.
+- **Software:** [BWA](https://github.com/lh3/bwa.git) and [Samtools](https://github.com/samtools/samtools.git) must be installed.
 - **Input Files:**
     - A reference genome in FASTA format (e.g., `reference.fna`).
     - Cleaned, paired-end FASTQ files (e.g., `sample_R1.fastq.gz` and `sample_R2.fastq.gz`).
