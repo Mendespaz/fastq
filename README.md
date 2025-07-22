@@ -13,7 +13,7 @@ The process uses `bwa-mem` for alignment and `samtools` for output processing.
 
 For sugarcane genomic studies, i recommend using the reference genome of  [Saccharum officinarum x spontaneum](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_038087645.1/) published by [Zhang et al., 2018 in Nature Genetics.](https://pmc.ncbi.nlm.nih.gov/articles/PMC11041754/)
 
-First, download the genome from NCBI, unzip it, and then create the BWA index.
+First, download the genome from NCBI and unzip it.
 
 ```bash
 # 1.1 - Download the reference genome
@@ -22,12 +22,10 @@ wget [https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/757/435/GCF_009757435.1_A
 # 1.2 - Unzip the file
 gunzip GCF_009757435.1_ASM1313833v1_genomic.fna.gz
 
-# 1.3 - Index the reference genome 
-bwa index GCF_009757435.1_ASM1313833v1_genomic.fna
 ```
 ## Step 2: Indexing the Reference Genome
 
-First, an index of the reference genome must be created. This step is only required once per reference genome.
+First, an index of the reference genome.
 
 ```bash
 bwa index /path/to/your/reference_genome.fna
