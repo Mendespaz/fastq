@@ -13,12 +13,11 @@ The process uses `bwa-mem` for alignment and `samtools` for output processing.
 
 For sugarcane genomic studies, i recommend using the reference genome of  [Saccharum officinarum x spontaneum](https://phytozome-next.jgi.doe.gov/info/SofficinarumxspontaneumR570_v2_1) published by [Zhang et al., 2018 in Nature Genetics.](https://pmc.ncbi.nlm.nih.gov/articles/PMC11041754/)
 
-First, download the genome from NCBI and unzip it.
+First, download the genome from phytozome and unzip it.
 
 ```bash
 # 1.1 - Download the reference genome
 wget https://files.phytozome-next.jgi.doe.gov/info/SofficinarumxspontaneumR570_v2.1/v2.1/assembly/SofficinarumxspontaneumR570_v2.1.assembly.fasta.gz
-
 
 # 1.2 - Unzip the file
 gunzip SofficinarumxspontaneumR570_v2.1.assembly.fasta.gz
@@ -26,13 +25,13 @@ gunzip SofficinarumxspontaneumR570_v2.1.assembly.fasta.gz
 ```
 ## Step 2: Indexing the Reference Genome
 
-First, an index of the reference genome.
+Before alignment, the reference genome FASTA file must be indexed.
 
 ```bash
 bwa index /path/to/your/reference_genome.fna
 ```
 ## Step 3: Read Alignment
-This command aligns the paired-end reads to the indexed reference and pipes the output directly to samtools to generate a compressed BAM file.
+This command aligns the paired-end reads to the indexed reference and the output directly to samtools to generate a compressed BAM file.
 ```bash
 bwa mem -t 8 \
 -R '@RG\tID:sample_name\tSM:sample_name\tPL:ILLUMINA' \
