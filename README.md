@@ -1,5 +1,24 @@
-# fastq
+# Sugarcane Genome Alignment using BWA-MEM
 
-## Alinhamento 
-### teste
-bwa mem -t 8 -R '@RG\tID:pai_alto\tSM:pai_alto\tPL:ILLUMINA' Cana/genoma_R570/GCA_038087645.1_Saccharum_officinarum_X_spontaneum_var_R570_v2.1_genomic.fna Cana/pais/cat/cleaned_reds/pai_alto_R1_cleaned_paired.fastq.gz Cana/pais/cat/cleaned_reds/pai_alto_R2_cleaned_paired.fastq.gz | samtools view -bS -o pai_alto.bam
+This document outlines the workflow for aligning paired-end Illumina sequencing reads from sugarcane samples against a reference genome. The process uses `bwa-mem` for alignment and `samtools` for output processing.
+
+## Prerequisites
+
+- **Software:** `BWA` and `Samtools` must be installed.
+- **Input Files:**
+    - A reference genome in FASTA format (e.g., `reference.fna`).
+    - Cleaned, paired-end FASTQ files (e.g., `sample_R1.fastq.gz` and `sample_R2.fastq.gz`).
+
+## Step 1: Indexing the Reference Genome
+
+First, an index of the reference genome must be created. This step is only required once per reference genome.
+
+```bash
+bwa index /path/to/your/reference_genome.fna
+
+bwa mem -t 8 \
+-R '@RG\tID:sample_name\tSM:sample_name\tPL:ILLUMINA' \
+/path/to/your/reference_genome.fna \
+/path/to/your/reads_R1.fastq.gz \
+/path/to/your/reads_R2.fastq.gz \
+| samtools view -bS -o output_sample.bam
