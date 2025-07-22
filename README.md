@@ -1,6 +1,7 @@
 # Sugarcane Genome Alignment using BWA-MEM
 
-This document outlines the workflow for aligning paired-end Illumina sequencing reads from sugarcane samples against a reference genome. The process uses `bwa-mem` for alignment and `samtools` for output processing.
+Workflow for aligning paired-end Illumina sequencing reads.
+The process uses `bwa-mem` for alignment and `samtools` for output processing.
 
 ## Prerequisites
 
@@ -10,7 +11,7 @@ This document outlines the workflow for aligning paired-end Illumina sequencing 
     - Cleaned, paired-end FASTQ files (e.g., `sample_R1.fastq.gz` and `sample_R2.fastq.gz`).
 ## Step 1: Reference Genome Preparation
 
-For sugarcane genomic studies, we recommend using the high-quality, allele-defined reference genome of *Saccharum spontaneum* published by Zhang et al., 2018 in Nature Genetics.
+For sugarcane genomic studies, i recommend using the reference genome of  [Saccharum officinarum x spontaneum] (https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_038087645.1/) published by [Zhang et al., 2018 in Nature Genetics.] (https://pmc.ncbi.nlm.nih.gov/articles/PMC11041754/)
 
 First, download the genome from NCBI, unzip it, and then create the BWA index.
 
@@ -21,7 +22,7 @@ wget [https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/757/435/GCF_009757435.1_A
 # 1.2 - Unzip the file
 gunzip GCF_009757435.1_ASM1313833v1_genomic.fna.gz
 
-# 1.3 - Index the reference genome (this step is slow)
+# 1.3 - Index the reference genome 
 bwa index GCF_009757435.1_ASM1313833v1_genomic.fna
 ```
 ## Step 2: Indexing the Reference Genome
